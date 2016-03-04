@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>CustomTypeSystem</name>
+  <description>The type system that defines all non-general annotations types in the focus of the Sentiment Analysis project.</description>
+  <version>1.0</version>
+  <vendor>Webis</vendor>
+  <imports>
+    <import location="../../../aitools4-ie-uima/conf/uima-descriptors/type-systems/ArguAnaTypeSystem.xml"/>
+  </imports>
+
+
+     <typeDescription>
+      <name>de.aitools.ie.uima.type.essays.ArgumentStrength</name>
+      <description>Text-level classification of the argument strength of an essay, as defined in (Persing and Ng, ACL 2015).</description>
+      <supertypeName>de.aitools.ie.uima.type.supertype.Classification</supertypeName>
+      <features>
+        <featureDescription>
+          <name>score</name>
+          <description>The argument strength score from the scale [1.0, 4.0].</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>fold</name>
+          <description>The number of the fold within the cross-validation of Persing and Ng (where available).</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+</typeSystemDescription>
+
